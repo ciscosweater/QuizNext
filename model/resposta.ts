@@ -29,10 +29,14 @@ export default class RespostaModel {
         return this.#revelada
     }
 
+    revelar() {
+        return new RespostaModel(this.#valor, this.#certa, true)
+    }
+
     toObject() {
         return {
             valor: this.#valor,
-            certa: this.#revelada,
+            certa: this.#certa,
             revelada: this.#revelada   
         }
     }
