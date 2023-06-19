@@ -5,10 +5,10 @@ import Resposta from "./Resposta";
 import Temporizador from "./Temporizador";
 
 const letras = [
-    { valor: 'A', cor: '#f2c866' },
-    { valor: 'B', cor: '#f266ba' },
-    { valor: 'C', cor: '#85d4f2' },
-    { valor: 'D', cor: '#bce596' },
+    { valor: 'A', cor: 'var(--PowderBlue)' },
+    { valor: 'B', cor: 'var(--UCLABlue)' },
+    { valor: 'C', cor: 'var(--DelftBlue)' },
+    { valor: 'D', cor: 'var(--RaisinBlack)' },
 ]
 
 interface QuestaoProps {
@@ -39,7 +39,7 @@ export default function Questao(props: QuestaoProps) {
     return (
         <div className={styles.questao}>
             <Enunciado texto={questao.enunciado} />
-            <Temporizador duracao={props.tempoPraResposta ?? 10} tempoEsgotado={props.tempoEsgotado}/>
+            <Temporizador duracao={props.tempoPraResposta ?? 10} tempoEsgotado={props.tempoEsgotado} />
             {renderizarRespostas()}
         </div>
     )
