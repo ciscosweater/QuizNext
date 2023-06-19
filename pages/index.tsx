@@ -14,12 +14,18 @@ export default function Home() {
   const [questao, setQuestao] = useState(questaoMock)
 
   function respostaFornecida(indice: number) {
-    setQuestao(questao.responderCom(indice))
-  }
+    setQuestao(questao.responderCom(indice));
+  };
+
+  function tempoEsgotado() {
+    if(questao.naoRespondida) {
+      setQuestao(questao.responderCom(-1));
+    }
+  };
 
   return (
-    <div style={{ display: 'flex', height: '100vh', justifyContent: 'center', alignItems: 'center' }}>
-      <Questao valor={questao} respostaFornecida={respostaFornecida} />
+    <div style={{ display: 'flex', minHeight: '100vh', justifyContent: 'center', alignItems: 'center' }}>
+      <Questao valor={questao} respostaFornecida={respostaFornecida} tempoEsgotado={tempoEsgotado} tempoPraResposta={5}/>
     </div>
   )
 }

@@ -1,0 +1,9 @@
+.temporizador {
+    display: flex;
+    margin: 20px 0;
+}
+
+.indicador {
+    font-size: 2.5rem;
+    font-family: 'Poppins', sans-serif;
+}
